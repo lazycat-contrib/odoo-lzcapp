@@ -1,0 +1,44 @@
+{
+  "name": "Odoo",
+  "package": "cloud.lazycat.app.odoo",
+  "description": "全球第一开源ERP",
+  "homepage": "https://www.odoo.com",
+  "author": "odoo",
+  "app_features": [
+    "background_task",
+    "public_path"
+  ],
+  "subdomain": "odoo",
+  "version": "18.0.0",
+  "public_paths": [
+    "/"
+  ],
+  "iconPath": "icon.png",
+  "composePath": "docker-compose.yml",
+  "unsupported_platforms": [],
+  "lastRouteType": "from_compose",
+  "port_mappings": {
+    "web_8069_8069": {
+      "use": true,
+      "type": "http",
+      "path": "/",
+      "targetPath": "/"
+    }
+  },
+  "image_odoo_18.0": {
+    "originalImage": "odoo:18.0",
+    "pushTarget": "none"
+  },
+  "web_volume_odoo-web-data_/var/lib/odoo_action": "emptyDir",
+  "web_volume_/var/lib/odoo_location": "app_data",
+  "web_volume_/etc/odoo_action": "emptyDir",
+  "web_volume_/etc/odoo_location": "app_data",
+  "web_volume_/mnt/extra-addons_action": "emptyDir",
+  "web_volume_/mnt/extra-addons_location": "app_data",
+  "image_postgres_15": {
+    "originalImage": "postgres:15",
+    "pushTarget": "none"
+  },
+  "odoo-db_volume_odoo-db-data_/var/lib/postgresql/data/pgdata_action": "emptyDir",
+  "odoo-db_volume_/var/lib/postgresql/data/pgdata_location": "app_data"
+}
