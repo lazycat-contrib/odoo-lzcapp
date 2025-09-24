@@ -2,9 +2,15 @@ lzc-sdk-version: "0.1"
 name: Odoo
 package: cloud.lazycat.app.odoo
 version: 19.0.0
-description: 全球第一开源ERP
 homepage: https://www.odoo.com
 author: odoo
+locales:
+  zh:
+    name: Odoo
+    description: Odoo 是一个开源的企业管理软件套件，涵盖从ERP到CRM等多种业务应用。
+  en:
+    name: Odoo
+    description: Odoo is an open-source suite of business management software, covering applications from ERP to CRM and more.
 application:
   subdomain: odoo
   background_task: true
