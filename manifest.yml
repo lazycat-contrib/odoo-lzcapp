@@ -1,7 +1,7 @@
 lzc-sdk-version: "0.1"
 name: Odoo
 package: cloud.lazycat.app.odoo
-version: 18.0.0
+version: 19.0.0
 description: 全球第一开源ERP
 homepage: https://www.odoo.com
 author: odoo
@@ -9,16 +9,15 @@ application:
   subdomain: odoo
   background_task: true
   multi_instance: false
-  gpu_accel: false
-  kvm_accel: false
-  usb_accel: false
+
   public_path:
     - /
   routes:
     - /=http://odoo-web:8069/
 services:
   odoo-web:
-    image: docker.hlmirror.com/odoo:18.0
+    # odoo:19.0
+    image: registry.lazycat.cloud/czyt/library/odoo:a900e2cdc3807576
     environment:
       - HOST=odoo-db
       - USER=odoo
@@ -30,11 +29,11 @@ services:
       - /lzcapp/var/extra-addons:/mnt/extra-addons
     setup_script: |
       mkdir -p /var/lib/odoo/sessions
-      chown -R odoo /var/lib/odoo/sessions  
-      
-  odoo-db: 
+      chown -R odoo /var/lib/odoo/sessions
+
+  odoo-db:
     container_name: odoo-db
-    image: docker.hlmirror.com/postgres:15
+    image: registry.lazycat.cloud/czyt/library/postgres:4c94230970ec8303
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_PASSWORD=odoo
