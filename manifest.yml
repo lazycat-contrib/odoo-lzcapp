@@ -46,3 +46,14 @@ services:
         - CMD-SHELL
         - pg_isready -U postgres
       start_period: 30s
+
+locales:
+  zh:
+    name: "Odoo"
+    description: "全球第一开源ERP"
+  zh_CN:
+    name: "Odoo"
+    description: "全球第一开源ERP"
+  en:
+    name: "Odoo"
+    description: "Open Source Apps To Grow Your Business."
