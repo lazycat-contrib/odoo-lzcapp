@@ -2,7 +2,6 @@ application:
   subdomain: odoo
   background_task: true
   multi_instance: false
-
   public_path:
     - /
   upstreams:
@@ -11,7 +10,8 @@ application:
 services:
   odoo-web:
     # odoo:19.0
-    image: registry.lazycat.cloud/czyt/library/odoo:a900e2cdc3807576
+    # upstream: docker.io/library/odoo:18.0
+    image: registry.lazycat.cloud/czyt/library/odoo:99476a57b2d60835
     environment:
       - HOST=odoo-db
       - USER=odoo
@@ -24,7 +24,6 @@ services:
     setup_script: |
       mkdir -p /var/lib/odoo/sessions
       chown -R odoo /var/lib/odoo/sessions
-
   odoo-db:
     image: registry.lazycat.cloud/czyt/library/postgres:4c94230970ec8303
     environment:
