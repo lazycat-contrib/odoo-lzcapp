@@ -1,10 +1,3 @@
-lzc-sdk-version: "0.1"
-name: Odoo
-package: cloud.lazycat.app.odoo
-version: 19.0.0
-description: 全球第一开源ERP
-homepage: https://www.odoo.com
-author: odoo
 application:
   subdomain: odoo
   background_task: true
@@ -12,8 +5,9 @@ application:
 
   public_path:
     - /
-  routes:
-    - /=http://odoo-web:8069/
+  upstreams:
+    - location: /
+      backend: http://odoo-web:8069/
 services:
   odoo-web:
     # odoo:19.0
@@ -32,7 +26,6 @@ services:
       chown -R odoo /var/lib/odoo/sessions
 
   odoo-db:
-    container_name: odoo-db
     image: registry.lazycat.cloud/czyt/library/postgres:4c94230970ec8303
     environment:
       - POSTGRES_DB=postgres
@@ -41,19 +34,8 @@ services:
       - PGDATA=/var/lib/postgresql/data/pgdata
     binds:
       - /lzcapp/var/db:/var/lib/postgresql/data/pgdata
-    health_check:
+    healthcheck:
       test:
         - CMD-SHELL
         - pg_isready -U postgres
       start_period: 30s
-
-locales:
-  zh:
-    name: "Odoo"
-    description: "全球第一开源ERP"
-  zh_CN:
-    name: "Odoo"
-    description: "全球第一开源ERP"
-  en:
-    name: "Odoo"
-    description: "Open Source Apps To Grow Your Business."

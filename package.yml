@@ -1,0 +1,18 @@
+package: cloud.lazycat.app.odoo
+version: 19.0.0
+name: Odoo
+description: 全球第一开源ERP
+min_os_version: 1.5.0
+homepage: https://www.odoo.com
+author: odoo
+
+locales:
+  zh:
+    name: "Odoo"
+    description: "全球第一开源ERP"
+  zh_CN:
+    name: "Odoo"
+    description: "全球第一开源ERP"
+  en:
+    name: "Odoo"
+    description: "Open Source Apps To Grow Your Business."
