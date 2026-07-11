@@ -1,5 +1,5 @@
 package: cloud.lazycat.app.odoo
-version: 18.0.0
+version: 19.0.0
 name: Odoo
 description: 全球第一开源ERP
 min_os_version: 1.5.0

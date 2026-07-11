@@ -10,8 +10,8 @@ application:
 services:
   odoo-web:
     # odoo:19.0
-    # upstream: docker.io/library/odoo:18.0
-    image: registry.lazycat.cloud/czyt/library/odoo:99476a57b2d60835
+    # upstream: docker.io/library/odoo:19.0
+    image: registry.lazycat.cloud/czyt/library/odoo:9ff4f2019a29547d
     environment:
       - HOST=odoo-db
       - USER=odoo
