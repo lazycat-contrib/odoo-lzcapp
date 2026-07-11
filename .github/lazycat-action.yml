@@ -20,8 +20,7 @@ images:
     target: service
     service: odoo-web
     source: docker.io/library/odoo
-    channel: custom
-    sort: created
+    channel: stable
     tag_regex: '^\d+\.\d+$'
     version_regex: '^(?P<version>\d+\.\d+)$'
     version_template: '{version}.0'
