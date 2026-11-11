@@ -25,11 +25,11 @@ images:
     version_regex: '^(?P<version>\d+\.\d+)$'
     version_template: '{version}.0'
     delivery:
-      mode: lazycat
+      mode: mirror
 
 stores:
   official:
-    enabled: true
+    enabled: false
     skip_if_version_exists: true
     create_if_missing: false
     changelog_locales: [zh, en]
